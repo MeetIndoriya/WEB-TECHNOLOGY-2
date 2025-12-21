@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+</head>
+
+<body>
+
+    <script>
+        const futureDateInput = prompt("Enter the future date (YYYY-MM-DD)");
+
+        const futureDate = new Date(futureDateInput);
+
+        const countdown = setInterval(() => {
+            const now = new Date();
+            const timeLeft = futureDate - now;
+
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                console.log("Countdown Completed!");
+                return;
+            }
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+            const seconds = Math.floor((timeLeft / 1000) % 60);
+
+            console.log(
+                `CountDown: ${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds`
+            );
+        }, 1000);
+    </script>
+
+</body>
+
+</html>
