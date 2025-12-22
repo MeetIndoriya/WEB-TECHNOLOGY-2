@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // Return the longest word and count the number of words in a string
+
+    let sentence = prompt("Enter a string: ");
+    let WordCount = {};
+    let longWord = 0;
+    for (let i = 0; i < sentence.length; i++) {
+        let word = sentence.split(" ");
+        WordCount[word.length] = word.length;
+        for (let j = i + 1; j < word.length; j++) {
+            if (word[j].length > longWord) {
+                longWord = word[j];
+            }
+        }
+    }
+
+    console.log("Word Count : ");
+    console.log(WordCount);
+    console.log("Longest Word : ");
+    console.log(longWord);
+
+</script>
+
+</html>
