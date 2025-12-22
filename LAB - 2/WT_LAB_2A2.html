@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // use regex to count vowel of consonant in a string
+
+        let sentence = prompt("Enter a string: ");
+        sentence = sentence.toLowerCase();
+        let charCount = {};
+        let charConsonantCount = {};
+        for (let i = 0 ; i < sentence.length ; i++)
+    {   
+        let char = sentence.charAt(i);
+        if (char.match(/[aeiou]/))
+        {
+            if (char in charCount )
+            {
+                charCount[char] += 1;
+            }
+            else{
+                charCount[char] = 1;
+            }
+        }
+        else {
+            charConsonantCount[char] = 1;
+        }
+    }
+    console.log("Vowel Count : ");
+    console.log(charCount);
+    
+    console.log("Consonent Count : ");
+    console.log(charConsonantCount);
+    </script>
+</body>
+</html>
