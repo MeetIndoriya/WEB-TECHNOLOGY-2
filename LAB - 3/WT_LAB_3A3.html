@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a function to count the frequency of words in a sentence using Map</title>
+</head>
+<body>
+    <script>
+        function wordFrequency(sentence) {
+            const words = sentence.split(' ');
+            const frequencyMap = new Map();
+
+            for (const word of words) {
+                const lowerCaseWord = word.toLowerCase();
+                if (frequencyMap.has(lowerCaseWord)) {
+                    frequencyMap.set(lowerCaseWord, frequencyMap.get(lowerCaseWord) + 1);
+                } else {
+                    frequencyMap.set(lowerCaseWord, 1);
+                }
+            }
+
+            return frequencyMap;
+        }
+
+        const sentence = prompt("Enter a sentence:");
+        const frequency = wordFrequency(sentence);
+        console.log(frequency);
+    </script>
+</body>
+</html>
